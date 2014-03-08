@@ -1,10 +1,12 @@
-debathena-grenew (10.0.3-0debathena1) UNRELEASED; urgency=low
+debathena-grenew (10.0.3-0debathena1) unstable; urgency=low
 
   * Modernize (i.e., kill krb4) grenew
   * Switch to a reasonable build system
   * Use dh7
+  * Add git-buildpackage configuration
+  * Set source format to 3.0 (quilt)
 
- -- Alexander Chernyakhovsky <achernya@mit.edu>  Fri, 07 Mar 2014 23:55:39 -0500
+ -- Alexander Chernyakhovsky <achernya@mit.edu>  Sat, 08 Mar 2014 01:07:09 -0500
 
 debathena-grenew (10.0.2-0debathena2) unstable; urgency=low
 
