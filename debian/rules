@@ -1,18 +1,3 @@
 #!/usr/bin/make -f
-
-DEB_AUTO_UPDATE_AUTOCONF = 2.50
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/autotools.mk
-
-KRB5_VERSION = $(shell dpkg-query --showformat='$${Version}' --show libkrb5-dev)
-
-ifeq ($(shell dpkg --compare-versions $(KRB5_VERSION) '<<' '1.7~' && echo y),y)
-	DEB_CONFIGURE_EXTRA_FLAGS += --with-krb4=$(shell krb4-config --prefix krb4)
-else
-	DEB_CONFIGURE_EXTRA_FLAGS += --without-krb4
-endif
-
-DEB_CONFIGURE_EXTRA_FLAGS += --with-krb5
-
-clean::
-	rm -f configure
+%:
+	dh $@ --with autoreconf
